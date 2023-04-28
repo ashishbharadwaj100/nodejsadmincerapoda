@@ -1,0 +1,128 @@
+<div class="user-detail">
+  <form method="POST" action="/product/addProductDetails/<%= editData.ProductId%>">
+    <div class="input-card">
+      <div class="input-box">
+        <label>Product Name</label>
+        <input type="text" placeholder="Product Name" name="ProductName" required
+          value="<%=(typeof editData!='undefined')? editData.ProductName:''%>">
+      </div>
+      <div class="input-box">
+        <label>Title</label>
+        <input type="text" placeholder="Title" name="Title" required
+          value="<%=(typeof editData!='undefined')? editData.Title:''%>">
+      </div>
+      <div class="input-box">
+        <label>Description</label>
+        <input type="text" placeholder="Description" name="Description" required
+          value="<%=(typeof editData!='undefined')? editData.Description:''%>">
+      </div>
+      <div class="input-box">
+        <label>Prices</label>
+        <input type="text" placeholder="Prices" name="Prices" required
+          value="<%=(typeof editData!='undefined')? editData.Prices:''%>">
+      </div>
+      <div class="input-box">
+        <label>Category</label>
+        <select placeholder="Select Category" name="CategoryId" required
+          value="<%=(typeof editData!='undefined')? editData.Category:''%>">
+         <option value="" selected>
+          Select Category
+         </option>
+          <option value="1" >
+            1
+          </option>
+          <option value="2">
+            2
+          </option>
+        </select>
+      </div>
+      <div class="input-box">
+        <label>Tag</label>
+        <select placeholder="Select Tag" name="TagId" required
+          value="<%=(typeof editData!='undefined')? editData.Tag:''%>">
+          <option value="" selected>
+            Select Tag
+           </option>
+            <option value="1" >
+              1
+            </option>
+            <option value="2">
+              2
+            </option>
+        </select>
+      </div>
+      <div class="input-box">
+        <label>Image</label>
+        <input type="file" name="Images" required value="<%=(typeof editData!='undefined')? editData.Image:''%>">
+      </div>
+      <div class="input-box">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" onclick="product()">Back</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  function product()
+{
+    return window.location.href = 'http://localhost:3000/product';
+}
+</script>
+<style>
+  .input-card {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #dfdede;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 lightgray;
+  }
+
+  .input-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+  }
+
+  .input-box input {
+    width: 50%;
+    border: 1px solid #e3e3e3;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .input-box select {
+    width: 50%;
+    border: 1px solid #e3e3e3;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .input-box label {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-box button.btn {
+    margin: 20px auto 0;
+    min-width: 200px;
+    border-radius: 7px;
+    background-color: #006698;
+    border: 1px solid transparent;
+    outline: none;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 7px 15px;
+    box-shadow: 0 0 5px 0 lightgray;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .input-box button.btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid grey;
+  }
+</style>
